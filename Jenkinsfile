@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/accueil-sop/jenkins-python-test.git'
@@ -26,5 +27,6 @@ pipeline {
                 sh 'docker run --name jenkins-python-test-container jenkins-python-test:latest'
             }
         }
+
     }
 }
